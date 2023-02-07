@@ -25,7 +25,7 @@ class _NewMessageState extends State<NewMessage> {
   Widget build(BuildContext context) {
     return Container(
       margin: EdgeInsets.only(top: 8),
-      padding: EdgeInsets.all(8),
+      padding: EdgeInsets.fromLTRB(15, 0, 0, 15),
       child: Row(
         children: [
           Expanded(

@@ -20,6 +20,10 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Messenger',
       theme: ThemeData(
+        // textTheme: TextTheme(
+        //     headlineMedium: TextStyle(
+        //   color: Colors.black,
+        // )),
         colorScheme: ColorScheme.fromSwatch().copyWith(
           secondary: Colors.amber,
           background: Colors.amber,
