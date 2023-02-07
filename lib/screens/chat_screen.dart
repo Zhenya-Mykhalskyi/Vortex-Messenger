@@ -2,6 +2,9 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 
+import 'package:messenger/widgets/chat/new_message.dart';
+import 'package:messenger/widgets/chat/messages.dart';
+
 class ChatScreen extends StatefulWidget {
   @override
   State<ChatScreen> createState() => _ChatScreenState();
@@ -41,33 +44,15 @@ class _ChatScreenState extends State<ChatScreen> {
           )
         ],
       ),
-      body: StreamBuilder(
-        stream: FirebaseFirestore.instance
-            .collection('chats/cVKHRStiSBwcwN6LY6do/messages')
-            .snapshots(),
-        builder: ((context, AsyncSnapshot<dynamic> streamSnapshot) {
-          if (streamSnapshot.connectionState == ConnectionState.waiting) {
-            return Center(child: CircularProgressIndicator());
-          }
-          final documents = streamSnapshot.data.docs;
-          return ListView.builder(
-            itemCount: documents.length,
-            itemBuilder: (ctx, index) => Container(
-              padding: EdgeInsets.all(20),
-              child: Text(
-                documents[index]['text'],
-              ),
+      body: Container(
+        child: Column(
+          children: [
+            Expanded(
+              child: Messages(),
             ),
-          );
-        }),
-      ),
-      floatingActionButton: FloatingActionButton(
-        child: const Icon(Icons.add),
-        onPressed: () {
-          FirebaseFirestore.instance
-              .collection('chats/cVKHRStiSBwcwN6LY6do/messages')
-              .add({'text': 'another another'});
-        },
+            NewMessage(),
+          ],
+        ),
       ),
     );
   } //snapshots видають нові значення при кожній зміні даних
