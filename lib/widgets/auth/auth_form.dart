@@ -56,7 +56,9 @@ class _AuthFormState extends State<AuthForm> {
                 TextFormField(
                   key: ValueKey('email'),
                   validator: (value) {
-                    if (value!.isEmpty || !value.contains('@')) {
+                    if (value!.isEmpty ||
+                        !value.contains('@') ||
+                        !value.endsWith('.com')) {
                       return 'Please enter a valid email address';
                     }
                     return null;
