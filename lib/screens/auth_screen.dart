@@ -51,7 +51,7 @@ class _AuthScreenState extends State<AuthScreen> {
           .set({
         'username': username,
         'email': email,
-        'imageUrl': url,
+        'imageUrl': url, //store url here
       });
     } on PlatformException catch (err) {
       var message = 'An error ocurred. Please check your credentils!';
