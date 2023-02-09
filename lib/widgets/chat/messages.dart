@@ -64,6 +64,7 @@ class Messages extends StatelessWidget {
             itemCount: chatSnapshot.data.docs.length,
             itemBuilder: (ctx, index) => MessageBubble(
               chatDocs[index]['text'],
+              chatDocs[index]['username'],
               chatDocs[index]['userId'] ==
                   uid, //check. it will return bool value
               ValueKey(chatDocs[index].id),
