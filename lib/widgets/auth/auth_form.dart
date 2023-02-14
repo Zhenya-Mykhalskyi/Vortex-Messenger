@@ -61,6 +61,7 @@ class _AuthFormState extends State<AuthForm> {
     }
   }
 
+  //colect values from form
   @override
   Widget build(BuildContext context) {
     return Center(

@@ -67,7 +67,7 @@ class Messages extends StatelessWidget {
               chatDocs[index]['username'],
               chatDocs[index]['userImage'],
               chatDocs[index]['userId'] ==
-                  uid, //check. it will return bool value
+                  uid, //check current user id is the same in /chat userId. If it is it will returns true, if not returnt false
               ValueKey(chatDocs[index].id),
             ),
           );
